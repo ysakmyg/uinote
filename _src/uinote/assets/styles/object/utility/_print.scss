@@ -1,0 +1,18 @@
+// ------------------------------------------------
+// UINOTE Printing Style
+// ------------------------------------------------
+
+#{$prefix}{
+  @media print{
+
+    // SiteID
+    &-siteid{
+      a{
+        img{
+          visibility: visible;
+        }
+      }
+    }
+
+  }
+}

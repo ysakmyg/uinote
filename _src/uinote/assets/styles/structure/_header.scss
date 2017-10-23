@@ -3,7 +3,7 @@
 // ------------------------------------------------
 
 #{$prefix}{
-  $self: &;
+
   &-header{
     align-items: center;
     background-color: $headerBg;
@@ -33,6 +33,9 @@
       img{
         vertical-align: bottom;
         visibility: hidden;
+        @media print{
+          visibility: visible;
+        }
       }
     }
   }
