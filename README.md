@@ -3,6 +3,9 @@
 Front-end component development template  
 UIコンポーネント開発環境 / コンポーネント管理用テンプレート
 
+表示用サンプル
+http://uinote.ysakmyg.com/
+
 ## Description
 
 UIのコンポーネント化（部品化）にて、各コンポーネントを組み合わせてページを生成するために使用する「コンポーネント集」を作成する開発環境及びテンプレートです。
