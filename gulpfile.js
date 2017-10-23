@@ -17,7 +17,7 @@ const connectSSI   = require('connect-ssi');
 const timestamp    = require('time-stamp');
 const revts        = require('gulp-rev-timestamp');
 const template     = require('gulp-template');
-const extender     = require('gulp-html-extend');
+const include      = require("gulp-include");
 
 //------------------------------------------------------
 // DevelopMode(css expanded or compressed)
@@ -44,7 +44,7 @@ const paths = {
     src_uinote_styles   : src + '/uinote/styles/**/*.scss',
     src_uinote_scripts  : src + '/uinote/scripts/**/*.js',
     src_uinote_template : src + '/uinote/template',
-    src_uinote_extend   : src + '/uinote/extend',
+    src_uinote_html     : src + '/uinote/html',
     dst_uinote_styles   : dst + '/assets/uinote/css',
     dst_uinote_scripts  : dst + '/assets/uinote/js',
     dst_uinote_template : dst + '/assets/include/timestamp',
@@ -61,7 +61,7 @@ const paths = {
 //------------------------------------------------------
 // LocalServer
 //------------------------------------------------------
-var baseDir = __dirname + '/' + dst;
+var baseDir = __dirname + '/docs';
 gulp.task('server', function() {
   browserSync.init({
     notify: false,
@@ -107,7 +107,7 @@ gulp.task('uinote_styles', function () {
     .on("end",function(){
       return gulp.src(paths.src_uinote_template + '/_uinote_styles.html')
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
+        .pipe(gulp.dest(paths.src_uinote_html + '/include/timestamp/'))
     })
 });
 // Scripts (_src/uinote/scripts/**/*.js)
@@ -126,16 +126,22 @@ gulp.task('uinote_scripts', function() {
     .on("end",function(){
       return gulp.src(paths.src_uinote_template + '/_uinote_scripts.html')
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
+        .pipe(gulp.dest(paths.src_uinote_html + '/include/timestamp/'))
     })
 });
-// HTML (_src/extend/)
+// HTML (_src/uinote/extend/**/*.html)
 //------------------------------------------------------
-gulp.task('extend', function () {
-    return gulp.src([paths.src_uinote_extend + '/**/*.html' , '!' + paths.src_uinote_extend + '/**/_*.html'])
-        .pipe(extender({annotations:true,verbose:false}))
-        .pipe(gulp.dest(paths.dst_uinote_html))
-
+gulp.task('include', function () {
+    return gulp.src(paths.src_uinote_html + '/**/*.html')
+      .pipe(plumber())
+      .pipe(include({
+          extensions: "html",
+          hardFail: true,
+          includePaths: [
+            __dirname + "/_src/uinote/html"
+          ]
+      }))
+      .pipe(gulp.dest(paths.dst_uinote_html))
 })
 
 
@@ -158,7 +164,7 @@ gulp.task('project_styles', function () {
       return gulp.src(paths.src_uinote_template + '/_project_styles.html')
         .pipe(template({projectName: prjName}))
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
+        .pipe(gulp.dest(paths.src_uinote_html + '/include/timestamp/'))
     })
 });
 // Scripts (_src/project/scripts/**/*.js)
@@ -178,7 +184,7 @@ gulp.task('project_scripts', function() {
       return gulp.src(paths.src_uinote_template + '/_project_scripts.html')
         .pipe(template({projectName: prjName}))
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
+        .pipe(gulp.dest(paths.src_uinote_html + '/include/timestamp/'))
     })
 });
 // Image Min
@@ -200,7 +206,7 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function() {
   gulp.watch([paths.src_uinote_styles],['uinote_styles','reload'])
   gulp.watch([paths.src_uinote_scripts],['uinote_scripts','reload'])
-  gulp.watch([paths.src_uinote_extend + '/**/*.html'],['extend','reload'])
+  gulp.watch([paths.src_uinote_html + '/**/*.html'],['include','reload'])
   gulp.watch([paths.src_project_styles],['project_styles','reload'])
   gulp.watch([paths.src_project_scripts],['project_scripts','reload'])
 });

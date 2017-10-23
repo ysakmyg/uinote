@@ -62,6 +62,7 @@ npm install
 ## File
 
 ```text
+一部抜粋
 ├── _src
 │   ├── project //プロジェクトファイル（※）
 │   │   ├── images //プロジェクト画像ファイル（※）
@@ -69,7 +70,7 @@ npm install
 │   │   │   │   └── danbo.jpg
 │   │   │   └── png
 │   │   │       └── logo.png
-│   │   ├── scripts　//プロジェクトjsファイル（※）
+│   │   ├── scripts　//プロジェクトJSファイル（※）
 │   │   │   ├── _partial01.js
 │   │   │   ├── _partial02.js
 │   │   │   └── _partial03.js
@@ -103,8 +104,8 @@ npm install
 │   │           ├── _footer.scss
 │   │           ├── _globalnav.scss
 │   │           └── _header.scss
-│   └── uinote // UINOTE用（編集不要）
-│       ├── extend
+│   └── uinote //UINOTEテンプレート
+│       ├── html //コンポーネントページサンンプル（※）
 │       │   ├── basic
 │       │   │   ├── colors.html
 │       │   │   ├── example.html
@@ -115,13 +116,13 @@ npm install
 │       │   │   └── grid.html
 │       │   ├── include
 │       │   │   ├── _footer.html
-│       │   │   ├── _glovalnav.html
+│       │   │   ├── _glovalnav.html //ナビゲーションファイル（ページ追加時要変更）
 │       │   │   ├── _header.html
 │       │   │   └── timestamp
-│       │   │       ├── _project_scripts.html
-│       │   │       ├── _project_styles.html
-│       │   │       ├── _uinote_scripts.html
-│       │   │       └── _uinote_styles.html
+│       │   │       ├── _project_scripts.html　// 共通ファイル（変更不要）
+│       │   │       ├── _project_styles.html　// 共通ファイル（変更不要）
+│       │   │       ├── _uinote_scripts.html　// 共通ファイル（変更不要）
+│       │   │       └── _uinote_styles.html　// 共通ファイル（変更不要）
 │       │   ├── index.html
 │       │   └── utilities
 │       │       └── index.html
@@ -166,11 +167,6 @@ npm install
 │   │   ├── sample
 │   │   │   ├── css
 │   │   │   │   └── sample.app.min.css
-│   │   │   ├── images
-│   │   │   │   ├── jpg
-│   │   │   │   │   └── danbo.jpg
-│   │   │   │   └── png
-│   │   │   │       └── logo.png
 │   │   │   └── js
 │   │   │       └── sample.app.min.js
 │   │   └── uinote
@@ -188,13 +184,19 @@ npm install
 │   │   ├── button.html
 │   │   ├── forms.html
 │   │   └── grid.html
+│   ├── include
+│   │   ├── _footer.html
+│   │   ├── _glovalnav.html
+│   │   ├── _header.html
+│   │   └── timestamp
+│   │       ├── _project_scripts.html
+│   │       ├── _project_styles.html
+│   │       ├── _uinote_scripts.html
+│   │       └── _uinote_styles.html
 │   ├── index.html
 │   └── utilities
 │       └── index.html
-├── .editorconfig
 ├── gulpfile.js
-├── package-lock.json
-├── package.json
 ```
 （※）＝　編集ファイル
 
