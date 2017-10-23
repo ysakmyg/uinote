@@ -1,0 +1,58 @@
+// ------------------------------------------------
+// Project Typography
+// ------------------------------------------------
+
+#{$prefix}{
+
+  // Heading
+  &-heading{
+    $self: &;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    @at-root{
+      [class="#{str-slice(#{$self}, 2)}"],
+      [class*="#{str-slice(#{$self}, 2)}--"] {
+        small{
+          display: block;
+          color: $color-gray;
+          font-weight: 200;
+        }
+      }
+    }
+    &--lv1{
+      font-size: $txt-xxl;
+      @extend #{$self};
+      small{
+        font-size: $txt-l;
+      }
+    }
+    &--lv2{
+      font-size: $txt-xl;
+      @extend #{$self};
+      small{
+        font-size: $txt-ml;
+      }
+    }
+    &--lv3{
+      font-size: $txt-l;
+      @extend #{$self};
+      small{
+        font-size: $txt-m;
+      }
+    }
+    &--lv4{
+      font-size: $txt-ml;
+      @extend #{$self};
+    }
+    &--lv5{
+      font-size: $txt-m;
+      @extend #{$self};
+    }
+    &--lv6{
+      font-size: $txt-sm;
+      @extend #{$self};
+    }
+  }
+
+}

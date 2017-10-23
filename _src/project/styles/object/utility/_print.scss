@@ -1,0 +1,24 @@
+// ------------------------------------------------
+// Project Print Style
+// ------------------------------------------------
+
+#{$prefix}{
+
+  &-print{
+    $self: &;
+
+    &--visible{
+      display: none;
+    }
+
+    @media print{
+      &--none{
+        display: none;
+      }
+      &--visible{
+        display: inherit;
+      }
+    }
+  }
+
+}

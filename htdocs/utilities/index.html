@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Utilities | UINOTE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--#include virtual="/assets/include/styles.html" -->
+</head>
+
+<body class="uinote">
+
+<!--#include virtual="/assets/include/header.html" -->
+
+<!--#include virtual="/assets/include/glovalnav.html" -->
+
+<main class="uinote-main">
+
+  <div class="uinote-container">
+
+    <div class="uinote-page-header">
+      <h1 class="uinote-page-heading">Utilities</h1>
+      <small>Utilities Data Input Example</small>
+    </div>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-text-alignment">
+<h2 class="uinote-module__name">TextAlignment</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample text alignment sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>ClassName</dt>
+    <dd>.sample-text--{{modifier}}</dd>
+    <dt>Left - modifier</dt>
+    <dd>--left (--sd-left / --md-left / --ld-left</dd>
+    <dt>Center - modifier</dt>
+    <dd>--center (--sd-center / --md-center / --ld-center)</dd>
+    <dt>Right - modifier</dt>
+    <dd>--right (--sd-right / --md-right / --ld-right)</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Adjust text position for each device</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="true">
+<!--===== Example Preview =====-->
+<p>Left alignment(default)</p>
+<p class="sample-text--center">Center alignment</p>
+<p class="sample-text--right">Right alignment</p>
+<p class="sample-text--sd-center">Sd-Center</p>
+<p class="sample-text--md-center">Md-center</p>
+<p class="sample-text--ld-right">Ld-Right</p>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-hidden">
+<h2 class="uinote-module__name">Hidden</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample hidden elements sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>hiddenClass</dt>
+    <dd>.sample-hidden</dd>
+    <dt>hiddenSd(max-width:639px)</dt>
+    <dd>.sample-hidden--sd</dd>
+    <dt>hiddenMd(min-width:640px)</dt>
+    <dd>.sample-hidden--md</dd>
+    <dt>hiddenLd(min-width:1024px)</dt>
+    <dd>.sample-hidden--ld</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Toggle display hidden by device width</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="false">
+<!--===== Example Preview =====-->
+<table class="sample-table--basic">
+  <colgroup>
+    <col class="sample-w40">
+    <col class="sample-w60">
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Hidden<br>(hidden always)</th>
+      <td>
+        <span class="sample-hidden">&#9733;Hidden text</span>
+      </td>
+    </tr>
+    <tr>
+      <th>HiddenSd<br>(max-width:639px)</th>
+      <td><span class="sample-hidden--sd">&#9733;Hidden text</span></td>
+    </tr>
+    <tr>
+      <th>HiddenMd<br>(min-width:640px)</th>
+      <td><span class="sample-hidden--md">&#9733;Hidden text</span></td>
+    </tr>
+    <tr>
+      <th>HiddenLd<br>(min-width:1024px)</th>
+      <td><span class="sample-hidden--ld">&#9733;Hidden text</span></td>
+    </tr>
+  </tbody>
+</table>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-print">
+<h2 class="uinote-module__name">Print</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample printing sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>className</dt>
+    <dd>.sample-print--hidden</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Adjust the display when printing</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="false">
+<!--===== Example Preview =====-->
+<table class="sample-table--basic">
+  <colgroup>
+    <col class="sample-w40">
+    <col class="sample-w60">
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>HiddenPrint</th>
+      <td><span class="sample-print--none">&#9733;It is not Printed</span></td>
+    </tr>
+    <tr>
+      <th>VisiblePrint</th>
+      <td><span class="sample-print--visible">&#9733;To be Printed</span></td>
+    </tr>
+  </tbody>
+</table>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+  <!-- .uinote-container --></div>
+
+<!-- .uinote-main --></main>
+
+<!--#include virtual="/assets/include/footer.html" -->
+
+<!--#include virtual="/assets/include/scripts.html" -->
+
+</body>
+</html>

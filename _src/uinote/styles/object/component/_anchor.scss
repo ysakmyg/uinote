@@ -1,0 +1,45 @@
+// ------------------------------------------------
+// UINOTE Page Anchor
+// ------------------------------------------------
+
+#{$prefix}{
+  &-anchor{
+    background-color: #fff;
+    font-size: $txt-m;
+    margin-bottom: 3em;
+    max-width: $cantainer;
+    width: 100%;
+  	&__list{
+  	  margin: 0;
+  	  padding: 0;
+  		li{
+        display: block;
+        margin-bottom: .5em;
+        @include mq(md){
+          display: inline-block;
+          margin-right: 1em;
+        }
+  			&.is-active a{
+  		  	color: red;
+  			}
+        a{
+          word-wrap: break-word;
+          overflow-wrap : break-word;
+          padding-left: 20px;
+          display: block;
+          &::before{
+            border-color: #999 transparent transparent transparent;
+            border-style: solid;
+            border-width: 5px 5px 0 5px;
+            content: "";
+            display: inline-block;
+            height: 0;
+            width: 0;
+            vertical-align: middle;
+            margin: -2px 10px 0 -20px;
+          }
+        }
+  		}
+  	}
+  }
+}

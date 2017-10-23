@@ -1,0 +1,63 @@
+// ------------------------------------------------
+// UINOTE Code
+// ------------------------------------------------
+
+#{$prefix}{
+  &-code{
+    border: 1px solid #bdbdbd;
+    display: block;
+    font-size: $txt-sm;
+    padding: 3em 1em 1em;
+    position: relative;
+    &:not(:last-child){
+      margin: 0 0 30px;
+    }
+  	&::before{
+  	  background-color: $codeTag;
+  	  color: #fff;
+  	  content: "source code";
+  	  display: inline-block;
+  	  font-size: $txt-s;
+  	  left: 0;
+  	  padding: .25em .7em;
+  	  position: absolute;
+  	  top: 0;
+      letter-spacing: .05em;
+      min-width: 5em;
+      text-align: center;
+  	}
+  	code{
+    	font-family: $codeFont;
+    	font-weight: normal;
+    	line-height: 1.5;
+  	}
+    &[data-code-language]{
+      &::before{
+        content: attr(data-code-language);
+      }
+    }
+    &__line-number {
+      border-right: 1px solid #ddd;
+      color: #999;
+      float: left;
+      font-family: 'Source Code Pro', monospace;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-right: .5em;
+      min-width: 1em;
+      padding-right: .5em;
+      text-align: right;
+      user-select: none;
+    }
+  }
+  &-code__text{
+    &:empty{
+      display: none;
+    }
+  }
+}
+
+
+.hljs{
+  padding: 0!important;
+}

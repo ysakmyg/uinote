@@ -1,0 +1,32 @@
+// ------------------------------------------------
+// UINOTE Footer Style
+// ------------------------------------------------
+
+#{$prefix}{
+  &-footer{
+    background-color: $footerBg;
+  	border-top: solid if($footerBg == #fff, 2px, 0) $footerLine;
+    display: block;
+  	padding: 20px 0;
+  	text-align: center;
+    margin-top: 100px;
+    small{
+      color: if($footerBg == #fff, $footerText, #fff);
+    }
+    #{$prefix}-version{
+      color: $color-gray;
+      display: inline-block;
+      font-size: $txt-s;
+      margin-left: .5em;
+      &::before,&::after{
+        font-size: $txt-sm;
+      }
+      &::before{
+        content: '[';
+      }
+      &::after{
+        content: ']';
+      }
+    }
+	}
+}

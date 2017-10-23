@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Module Sample | UINOTE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--#include virtual="/assets/include/styles.html" -->
+</head>
+
+<body class="uinote">
+
+<!--#include virtual="/assets/include/header.html" -->
+
+<!--#include virtual="/assets/include/glovalnav.html" -->
+
+<main class="uinote-main">
+
+  <div class="uinote-container">
+
+    <div class="uinote-page-header">
+      <h1 class="uinote-page-heading">Example</h1>
+      <small>Module Data Input Example</small>
+    </div>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="module-name">
+<h2 class="uinote-module__name">Module Name</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+  <!-- Paragraph -->
+  <p>Lorem ipsum dolor sit amet, eos porro copiosae eu, mei graeco delicata ei. Soleat feugiat lobortis in est, vix id odio dicta nonumes, eam ei veniam quodsi aliquam. Qui oratio.</p>
+  <!-- Unordered list -->
+  <ul>
+    <li>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</li>
+    <li>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</li>
+    <li>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</li>
+  </ul>
+  <!-- ordered list -->
+  <ol>
+    <li>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</li>
+    <li>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</li>
+    <li>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</li>
+  </ol>
+  <!-- Table -->
+  <table>
+    <colgroup span="1" style="width: 30%;"></colgroup>
+    <colgroup span="1" style="width: 70%;"></colgroup>
+    <tbody>
+      <tr>
+        <th>header</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>header</th>
+        <td>data</td>
+      </tr>
+      <tr>
+        <th>header</th>
+        <td>data</td>
+      </tr>
+    </tbody>
+  </table>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>ClassName</dt>
+    <dd>.class_name01</dd>
+    <dt>ClassName</dt>
+    <dd>.class_name02</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Commentary text Commentary text Commentary text</li>
+    <li>Commentary text Commentary text Commentary text</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="true">
+<!--===== Example Preview =====-->
+<p class="sample-text--danger"><em>Lorem ipsum dolor sit amet, his petentium sapientem principes an.</em></p>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+  <!-- .uinote-container --></div>
+
+<!-- .uinote-main --></main>
+
+<!--#include virtual="/assets/include/footer.html" -->
+
+<!--#include virtual="/assets/include/scripts.html" -->
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+// ------------------------------------------------
+// UINOTE Module
+// ------------------------------------------------
+
+#{$prefix}{
+  &-module{
+    $self: &;
+
+    // Module Id
+    // ------------------------------
+    &__id{
+      color: #999;
+      display: block;
+      font-size: $txt-s;
+      font-weight: 500;
+      margin-bottom: .15em;
+      &::before,&:after{
+        font-size: $txt-sm;
+      }
+    	&::before{
+      	content:'[';
+      	margin-right: .25em;
+    	}
+    	&::after{
+      	content:']';
+      	margin-left: .25em;
+    	}
+    }
+
+    // Module Name
+    // ------------------------------
+    &__name{
+      color: #333;
+      font-family: $pointFont;
+      font-size: $txt-l;
+      font-weight: 600;
+      margin-bottom: 1em;
+      overflow-wrap : break-word;
+      word-wrap : break-word;
+      a{
+        @include hide-text;
+        background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%200%2048%2048%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M28.363%2019.563c.54.54.82%201.288.772%202.05-.046.638-.32%201.237-.772%201.69-1.05.988-2.69.988-3.74%200-1.558-1.557-4.083-1.557-5.642%200l-8.49%208.49c-1.56%201.56-1.56%204.09%200%205.65%201.56%201.56%204.09%201.56%205.65%200l5.03-5.03c.19-.192.48-.25.73-.148%201.35.55%202.8.83%204.26.825h.265c.365-.002.665.294.67.662%200%20.18-.07.35-.2.476l-6.99%206.986c-1.743%201.746-4.112%202.724-6.58%202.715-5.144-.01-9.312-4.18-9.31-9.33.003-2.47.98-4.83%202.723-6.58l8.462-8.47c1.74-1.75%204.11-2.737%206.583-2.73%201.78%200%203.524.51%205.023%201.47.566.36%201.09.78%201.56%201.254zM41.198%206.728c3.638%203.638%203.638%209.537%200%2013.175l-8.47%208.47c-1.192%201.192-2.684%202.038-4.32%202.448h-.072l-.386.08-.213.04-.46.07h-.225c-.173%200-.326.04-.473.04l-.4.05h-.51c-.33-.01-.67-.04-.99-.09-.28-.04-.54-.1-.81-.16l-.4-.103c-.14-.04-.288-.085-.427-.14-.14-.052-.287-.1-.427-.16s-.28-.11-.42-.18c-.99-.457-1.89-1.087-2.66-1.86-.54-.54-.82-1.29-.77-2.05.04-.643.315-1.25.77-1.703%201.05-.99%202.69-.99%203.74%200%201.56%201.554%204.084%201.554%205.643%200l2.182-2.17.052-.06%206.243-6.236c1.56-1.56%201.56-4.09%200-5.65-1.56-1.56-4.09-1.56-5.65%200l-5.01%205.005c-.19.19-.475.25-.724.145-1.35-.55-2.795-.836-4.25-.83h-.25c-.273.002-.52-.16-.627-.41-.108-.25-.05-.54.14-.73l6.98-6.975c3.636-3.636%209.535-3.636%2013.173%200z%22%2F%3E%3C%2Fsvg%3E);
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        display: inline-block;
+        font-size: $txt-ml;
+        height: 24px;
+        margin-top: -.15em;
+        vertical-align: middle;
+        width: 24px;
+        &:hover{
+          opacity: .5;
+        }
+      }
+    }
+
+    // Module Doc
+    // ------------------------------
+    &__doc{
+    	font-size: $txt-sm;
+      margin-bottom: 2em;
+    	p{
+    	  margin: 0 0 1em;
+    	  padding: 0;
+        line-height: 1.75;
+    	}
+      ul:not([class]){
+        list-style: disc;
+    		margin: 0 0 1em 1.25em;
+        padding: 0
+    	}
+      ol:not([class]){
+        list-style: decimal;
+        margin: 0 0 1em 1.25em;
+        padding: 0;
+      }
+      table{
+        border-collapse: collapse;
+        margin-bottom: 1.15em;
+        width: 100%;
+        tbody{
+          th,td{
+            border: 1px solid #ccc;
+            font-size: $txt-s;
+            padding: .5em .75em;
+          }
+          th{
+            background-color: #eee;
+            font-weight: normal;
+            text-align: left;
+          }
+        }
+      }
+      *:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    // Module Data
+    // ------------------------------
+    &__data{
+      border-bottom: 1px #ccc dotted;
+      font-size: $txt-s;
+      padding: 0 1em 1em;
+      &::before{
+        border-bottom: 1px #ccc dotted;
+        content: attr(data-format)" : ";
+        display: block;
+        margin: 0 -1em 1em;
+        padding-bottom: .5em;
+        text-transform: capitalize;
+        width: 100%;
+      }
+      &:not(:last-child){
+    		margin-bottom: 1em;
+    	}
+
+      // Horizon dl
+      dl{
+        margin: 0;
+        dt,dd{
+          display: inline;
+        }
+        dt{
+          color: #999;
+          margin-right: .5em;
+          &::after{
+            content: " : "
+          }
+        }
+        dd{
+          margin: 0;
+          &::after {
+          	content: "\A";
+          	white-space: pre;
+            display: block;
+            font-size: 0px;
+            margin-top: 3px;
+          }
+        }
+      }
+      // Notes list
+      ul{
+        margin: 0;
+        padding: 0;
+        li{
+          color: #666;
+          list-style: none;
+          padding-left: 1.5em;
+          line-height: 1.75;
+          &::before{
+            content: '\203B';
+            display: inline-block;
+            margin-left: -1.25em;
+            margin-right: .25em
+          }
+        }
+      }
+    }
+
+    // Module Preview Area
+    // ------------------------------
+    &__preview{
+      margin-top: 2em;
+      padding-top: 2.5em;
+      position: relative;
+      &:not(:last-child){
+        margin-bottom: 2em;
+      }
+    	&::before{
+      	color: #666;
+      	content: "example preview";
+      	display: inline-block;
+      	font-size: $txt-s;
+        font-weight: bold;
+      	left: 0;
+      	position: absolute;
+      	text-transform: capitalize;
+      	top: 0;
+    	}
+      // Grid Module Colorling
+      &--grid{
+        .sample-grid{
+          .sample-grid__item{
+            font-size: $txt-s;
+            margin-bottom: 1px;
+            padding: .5em;
+            text-align: center;
+            &:nth-child(2n+1){
+              background-color: #eee;
+            }
+            &:nth-child(2n){
+              background-color: #ddd;
+            }
+          }
+        }
+      }
+      // Grid Module Colorling
+      &--grid-option{
+        .sample-grid{
+          .sample-grid__item{
+            font-size: $txt-s;
+            margin-bottom: 1px;
+            padding: 1em;
+            text-align: center;
+            background-color: #eee;
+            &[data-connect]{
+              background-color: #ddd;
+            }
+          }
+        }
+      }
+      // preview tiny width
+      &--tiny{
+        @include mq(md){
+          width: 60%
+        }
+      }
+    }
+
+    // Code Only Display
+    // ------------------------------
+    &__code{
+      border-radius: .25em;
+      border: 1px solid #bdbdbd;
+      display: block;
+      font-size: $txt-sm;
+      margin: 0;
+      padding: 3em 1em 1em;
+      position: relative;
+      &:not(:last-child){
+        margin: 0 0 30px;
+      }
+    	&::before{
+    	  background-color: $codeTag;
+    	  border-radius: .25em 0 .25em 0;
+    	  color: #fff;
+    	  content: "source code";
+    	  display: inline-block;
+    	  font-size: $txt-s;
+        font-weight: bold;
+    	  left: -1px;
+    	  padding: .5em 1em;
+    	  position: absolute;
+    	  text-transform: capitalize;
+    	  top: -1px;
+    	}
+    	code{
+      	font-family: $codeFont;
+      	line-height: 1.5;
+      	font-weight: normal;
+    	}
+    }
+
+    // Code Line Number
+    // ------------------------------
+    &__line-number {
+      border-right: 1px solid #ddd;
+      color: #999;
+      float: left;
+      font-family: $codeFont;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-right: .5em;
+      min-width: 1em;
+      padding-right: .5em;
+      text-align: right;
+      user-select: none;
+    }
+  }
+}
+
+.hljs{
+  padding: 0!important;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,56 @@
+// ------------------------------------------------
+// sg Intro Page
+// ------------------------------------------------
+
+#{$prefix}{
+  &-intro-doc{
+    h2,h3,h4{
+      font-family: $pointFont;
+    }
+  	h2{
+  		border-bottom: solid 1px #ccc;
+  		margin: 0 0 1em 0;
+  		padding-bottom: 10px;
+      font-size: $txt-l;
+      font-weight: 600;
+      line-height: 1.25;
+  	}
+  	h3{
+      font-size: $txt-ml;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0 0 1em 0;
+  	}
+    h4{
+      font-size: $txt-m;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 1em;
+    }
+    ul{
+      font-size: $txt-sm;
+      line-height: 1.75;
+      list-style: disc;
+      margin: 0 0 2em 1em;
+      padding: 0;
+    }
+    ol{
+      font-size: $txt-sm;
+      line-height: 1.75;
+      list-style: decimal;
+      margin: 0 0 2em 1em;
+      padding: 0;
+    }
+    p{
+      font-size: $txt-sm;
+      line-height: 1.5;
+      margin: 0 0 1.25em;
+    }
+    section:not(:last-child){
+      margin-bottom: 4em;
+      *:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

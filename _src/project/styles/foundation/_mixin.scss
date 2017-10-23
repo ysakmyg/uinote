@@ -1,0 +1,48 @@
+// ------------------------------------------------
+// Project mixin
+// ------------------------------------------------
+
+// mediaQuery
+// ------------------------------------------------
+@mixin mq($breakpoint,$value:'',$value2:'') {
+  @if $breakpoint == min {
+     @media (min-width: $value) { @content ; }
+  }
+  @else if $breakpoint == max {
+     @media (max-width: $value) { @content ; }
+  }
+  @else if $breakpoint == minmax {
+     @media (min-width: $value) and (max-width: $value2){ @content ; }
+  }
+  @else {
+    @media #{map-get($breakpoints, $breakpoint)} { @content; }
+  }
+}
+
+// hideText
+// ------------------------------------------------
+@mixin hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// lineClamp
+// ------------------------------------------------
+@mixin line-clamp($line){
+  display: box;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+// clearfix
+// ------------------------------------------------
+@mixin clearfix{
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}

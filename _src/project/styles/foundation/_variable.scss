@@ -1,0 +1,53 @@
+// ------------------------------------------------
+// Project variable
+// ------------------------------------------------
+
+// Breakpoints
+// ------------------------------------------------
+// - smallDevice:   39.938em(639px)
+// - mediumlDevice: 40em(640px)
+// - mediumLarge:   40em(640px) - 63.938em(1024px)
+// - largeDevice:   64em(1024px)
+// - extraLarge:    90em(1440px)
+$breakpoints: (
+  'sd': '(max-width: 39.938em)',
+  'md': '(min-width: 40em)',
+  'ml': '(min-width: 40em) and (max-width: 63.938em)',
+  'ld': '(min-width: 64em)',
+  'xl': '(min-width: 90em)'
+) !default;
+
+// Color Variable
+// ------------------------------------------------
+$color-default:   #333;
+$color-gray:      #aaa;
+$color-lightgray: #ddd;
+$color-smoke:     #fafafa;
+$color-white:     #fff;
+$color-link:      #1111cc;
+$color-disabled:  #eee;
+$color-muted:     #636c72;
+$color-primary:   #0275d8;
+$color-secondary: #999;
+$color-success:   #5cb85c;
+$color-info:      #5bc0de;
+$color-warning:   #f0ad4e;
+$color-danger:    #d9534f;
+
+// TextSize Variable
+// ------------------------------------------------
+$txt-xs:  1.0rem;
+$txt-s:   1.2rem;
+$txt-sm:  1.4rem;
+$txt-m:   1.6rem;
+$txt-ml:  1.8rem;
+$txt-l:   2.4rem;
+$txt-xl:  3.6rem;
+$txt-xxl: 4.8rem;
+
+// Margin Bottom
+$mb-s:   5px;
+$mb-m:   10px;
+$mb-l:   20px;
+$mb-xl:  30px;
+$mb-xxl: 40px;

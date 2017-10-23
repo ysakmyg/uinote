@@ -1,0 +1,39 @@
+// ------------------------------------------------
+// Project Reset Style
+// ------------------------------------------------
+
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, a, div, span, iframe, table, tr, th, td, button ,figure, fieldset{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+article, header, footer, aside, figure, figcaption, nav, section ,main{
+  display:block;
+}
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+ol, ul {
+  list-style: none;
+  list-style-type: none;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+img{
+  vertical-align: bottom;
+  border-width: 0;
+}
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+  appearance: none;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}

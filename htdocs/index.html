@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>UINOTE | Component Notes Template</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--#include virtual="/assets/include/styles.html" -->
+</head>
+
+<body class="uinote uinote-intro">
+
+<!--#include virtual="/assets/include/header.html" -->
+
+<!--#include virtual="/assets/include/glovalnav.html" -->
+
+<main class="uinote-main">
+
+  <div class="uinote-container">
+
+    <div class="uinote-page-header">
+      <h1 class="uinote-page-heading">Component Notes Template</h1>
+      <small>Lorem ipsum dolor sit amet, vis ut placerat consequat ei.</small>
+    </div>
+
+    <div class="uinote-intro-doc">
+
+      <section>
+        <h2>Heading Level2</h2>
+        <p>Lorem ipsum dolor sit amet, ea accusam recteque partiendo vis, vim an congue iriure labitur. At vix deleniti luptatum. Viderer virtute eu his, choro tacimates ut eam, eam omnes petentium moderatius ut. Delectus conceptam et cum, his ut graecis theophrastus, eum in sensibus tincidunt contentiones vim.</p>
+        <p>Lorem ipsum dolor sit amet, ea accusam recteque partiendo vis, vim an congue iriure labitur. At vix deleniti luptatum. Viderer virtute eu his, choro tacimates ut eam, eam omnes petentium moderatius ut. Delectus conceptam et cum, his ut graecis theophrastus, eum in sensibus tincidunt contentiones vim.</p>
+        <h3>Heading Level3</h3>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, laboramus adolescens duo cu, duo.</li>
+          <li>Lorem ipsum dolor sit amet, laboramus adolescens duo cu, duo.</li>
+          <li>Lorem ipsum dolor sit amet, laboramus adolescens duo cu, duo.</li>
+        </ul>
+        <h4>heading Level4</h4>
+        <ol>
+          <li>Lorem ipsum dolor sit amet, et alienum salutatus appellantur mel, facete euripidis adipiscing per ea, debet bonorum definitionem.</li>
+          <li>Lorem ipsum dolor sit amet, et alienum salutatus appellantur mel, facete euripidis adipiscing per ea, debet bonorum definitionem.</li>
+          <li>Lorem ipsum dolor sit amet, et alienum salutatus appellantur mel, facete euripidis adipiscing per ea, debet bonorum definitionem.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Code Highlight</h2>
+        <h3>HTML</h3>
+<textarea class="uinote-code__text" data-code-language="html">
+<!--===== code =====-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>...</title>
+</head>
+<body>
+...
+</body>
+</html>
+<!--===== /code =====-->
+</textarea>
+
+        <h3>CSS</h3>
+<textarea class="uinote-code__text" data-code-language="css">
+<!--===== code =====-->
+a:link, a:visited, a:hover, a:active {
+  background-color: gray;
+  color: white;
+  padding: 1em 2.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+<!--===== /code =====-->
+</textarea>
+
+        <h3>Javascript</h3>
+<textarea class="uinote-code__text" data-code-language="javascript">
+<!--===== code =====-->
+// hasClass
+function hasClass(ele,cls) {
+  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+// addClass
+function addClass(ele,cls) {
+  if (!hasClass(ele,cls)) ele.className += " "+cls;
+}
+// removeClass
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
+}
+<!--===== /code =====-->
+</textarea>
+
+      </section>
+
+
+    <!-- .uinote-intro-doc --></div>
+
+  <!-- .uinote-container --></div>
+
+<!-- .uinote-main --></main>
+
+<!--#include virtual="/assets/include/footer.html" -->
+
+<!--#include virtual="/assets/include/scripts.html" -->
+
+</body>
+</html>

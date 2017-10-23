@@ -1,0 +1,98 @@
+// ------------------------------------------------
+// Project Button
+// ------------------------------------------------
+
+#{$prefix}{
+
+  &-button{
+    $self: &;
+    background-color: $color-white;
+    border: 1px solid $color-gray;
+    color: $color-default;
+    @at-root{
+      [class="#{str-slice(#{$self}, 2)}"],
+      [class*="#{str-slice(#{$self}, 2)}--"] {
+        border-radius: 3px;
+        cursor: pointer;
+        display: block;
+        font-size: $txt-m;
+        font-weight: 400;
+        line-height: inherit;
+        margin-bottom: $mb-m;
+        padding: 12px;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 100%;
+        // Hover
+        &:hover{
+          opacity: .8;
+        }
+        // Disabled
+        &[aria-disabled],
+        &[disabled]{
+          cursor: not-allowed;
+          opacity: .5;
+        }
+      }
+      // Default Button Disabled
+      [class="#{str-slice(#{$self}, 2)}"]{
+        &[aria-disabled="true"],
+        &[disabled]{
+          background-color: darken($color-white, 3%);
+          border-color: lighten($color-gray,10%);
+          color: lighten($color-default,40%);
+        }
+      }
+    }
+    // Modifier
+    $button:(
+      primary:($color-primary,$color-primary,$color-white),
+      secondary:($color-secondary,$color-secondary,$color-white),
+      success:($color-success,$color-success,$color-white),
+      danger:($color-danger,$color-danger,$color-white),
+      warning:($color-warning,$color-warning,$color-white),
+      info:($color-info,$color-info,$color-white)
+    );
+    @each $className, $item in $button{
+      $bgColor     : nth($item, 1);
+      $borderColor : nth($item, 2);
+      $txtColor    : nth($item, 3);
+      &--#{$className}{
+        background-color: #{$bgColor};
+        border-color: #{$borderColor};
+        color: #{$txtColor};
+        @at-root{
+          a#{&} {
+            color: #{$txtColor};
+          }
+        }
+      }
+    }
+
+    // Large Size
+    &--large{
+      font-size: $txt-ml;
+      padding: 14px;
+    }
+
+    // Small Size
+    &--small{
+      font-size: $txt-sm;
+      padding: 8px;
+    }
+
+    // Tyny Size
+    &--tiny{
+      font-size: $txt-s;
+      padding: 6px;
+    }
+
+    // Inline
+    &--inline{
+      display: inline-block;
+      width: auto;
+    }
+
+  }
+}

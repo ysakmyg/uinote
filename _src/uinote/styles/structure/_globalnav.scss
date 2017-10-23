@@ -1,0 +1,175 @@
+// ------------------------------------------------
+// UINOTE Global Nav Style
+// ------------------------------------------------
+
+#{$prefix}{
+	// Global Nav
+	&-global-nav{
+    $self: &;
+		background-color: $navBg;
+    visibility: hidden;
+		padding: 3.5em 0 0;
+    transition: all .3s ease;
+    height: 100%;
+    position: fixed;
+    right: -60%;
+    top: 0;
+    width: 60%;
+    z-index: 100;
+    #{$self}__list{
+      display: none;
+    }
+    @include mq(md){
+      right: -300px;
+      width: 300px;
+    }
+    // Slide Move Overlay
+    .is-overlay & {
+      visibility: visible;
+      right: 0;
+      #{$self}__list{
+        display: block;
+      }
+    }
+    // List
+		&__list{
+      height: 100%;
+      -webkit-overflow-scrolling:touch;
+      overflow: auto;
+      padding: 1px 0;
+      width: 100%;
+      >li{
+        >a,span{
+          color: #fff;
+          cursor: pointer;
+          display: block;
+					font-size: $txt-m;
+          font-weight: 500;
+          padding: .6em 1.5em;
+          text-decoration: none;
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+          &:focus{
+            background-color: rgba(#fff, .3);
+            outline: 1px dotted rgba(#fff,.5);
+          }
+        }
+        // Active Highlight Style
+        &.is-active > a{
+          background-color: rgba(#fff, .3);
+        }
+        @include mq(md){
+          > a:hover,
+          > span:hover{
+            background-color: rgba(#fff, .3);
+          }
+        }
+        // Child Nest Menu
+        >ul{
+          max-height: 0;
+          overflow: hidden;
+          padding: 0;
+          transition: max-height .3s ease-out;
+          visibility: hidden;
+          >li{
+            >a,span{
+              color: #fff;
+              display: block;
+							font-size: $txt-sm;
+              font-weight: normal;
+              padding: .45em 1.5em .45em 3em;
+              text-decoration: none;
+              &:focus{
+                background-color: rgba(#fff, .1);
+                outline: 1px dotted rgba(#fff,.5);
+              }
+            }
+            &:last-child{
+              margin-bottom: 1px;
+            }
+            // Child Highlight Style
+            &.is-active > a{
+              background-color: rgba(#fff, .1);
+            }
+            @include mq(md){
+              > a:hover{
+                background-color: rgba(#fff, .1);
+              }
+            }
+          }
+        }
+        [aria-expanded]{
+          &:after{
+            background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%200%2048%2048%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M19.638%2031.792L4%2016.154l4.304-4.304%2015.638%2015.638L39.58%2011.85l4.304%204.304-15.638%2015.638.07.07-4.303%204.305-.07-.07-.072.07-4.3-4.304.07-.07z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E);
+            background-size: 1em;
+            content: '';
+            display: inline-block;
+            font-size: 1.4rem;
+            height: 1em;
+            margin-left: .75em;
+            margin-top: -.15em;
+            transition: all  0.3s ease;
+            vertical-align: middle;
+            width: 1em;
+          }
+        }
+        [aria-expanded="true"]{
+          &:after{
+            transform: rotate(-180deg);
+          }
+        }
+        // Child Nest Menu Active and Click Open
+        &.is-active > ul,
+        [aria-expanded="true"] + ul {
+          max-height: 100vh;
+          overflow: auto;
+          transition: max-height .3s ease-in;
+          visibility: visible;
+        }
+      }
+    }
+    // Close Button
+    &__close{
+      align-items: center;
+      background-color: transparent;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      height: 28px;
+      justify-content: center;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 28px;
+      // Icon Style
+      #{$prefix}-icon{
+        font-size: $txt-ml;
+        fill: #fff;
+      }
+      &:focus{
+        background-color: rgba(#fff, .3);
+        outline: 1px dotted rgba(#fff,.5);
+      }
+    }
+	}
+  // Overlay Style
+  &.is-overlay{
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    #{$prefix}-overlay {
+      background-color: rgba(#333, .4);
+      display: block;
+      height:100vh;
+      left:0;
+      position:fixed;
+      top:0;
+      width:100vw;
+      z-index: 10;
+    }
+  }
+
+}

@@ -1,0 +1,30 @@
+// ------------------------------------------------
+// Project Table
+// ------------------------------------------------
+
+#{$prefix}{
+
+  &-table{
+    $self: &;
+    @at-root{
+      [class="#{str-slice(#{$self}, 2)}"],
+      [class*="#{str-slice(#{$self}, 2)}--"] {
+        width: 100%;
+      }
+    }
+    &--basic{
+      th,td{
+        font-size: $txt-s;
+        border: 1px solid $color-lightgray;
+        padding: 1em;
+      }
+      tbody{
+        th{
+          background-color: $color-smoke;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+}

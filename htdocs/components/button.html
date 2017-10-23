@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Button | UINOTE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--#include virtual="/assets/include/styles.html" -->
+</head>
+
+<body class="uinote">
+
+<!--#include virtual="/assets/include/header.html" -->
+
+<!--#include virtual="/assets/include/glovalnav.html" -->
+
+<main class="uinote-main">
+
+  <div class="uinote-container">
+
+    <div class="uinote-page-header">
+      <h1 class="uinote-page-heading">Button</h1>
+      <small>Button Data Input Example</small>
+    </div>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-button">
+<h2 class="uinote-module__name">Button</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample button sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>ClassName</dt>
+    <dd>.sample-button--{modifier}</dd>
+    <dt>Default ClassName</dt>
+    <dd>.sample-button</dd>
+    <dt>Primary - modifier</dt>
+    <dd>--primary</dd>
+    <dt>Secondary - modifier</dt>
+    <dd>--secondary</dd>
+    <dt>Success - modifier</dt>
+    <dd>--success</dd>
+    <dt>Danger - modifier</dt>
+    <dd>--danger</dd>
+    <dt>Warning - modifier</dt>
+    <dd>--warning</dd>
+    <dt>Info - modifier</dt>
+    <dd>--info</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Commentary text Commentary text Commentary text</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="false">
+<!--===== Example Preview =====-->
+<div class="uinote-grid uinote-grid--col2 uinote-grid--mbnone">
+  <div class="uinote-grid__col">
+    <button class="sample-button" type="button"><span class="sample-button__text">Default (#fff)</span></button>
+  </div>
+</div>
+<div class="uinote-grid uinote-grid--col2 uinote-grid--mbnone">
+  <div class="uinote-grid__col">
+    <button class="sample-button--primary" type="button"><span class="sample-button__text">Primary (#0275d8)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--secondary" type="button"><span class="sample-button__text">Secondary (#999)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--success" type="button"><span class="sample-button__text">Success (#5cb85c)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--danger" type="button"><span class="sample-button__text">Danger (#d9534f)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--warning" type="button"><span class="sample-button__text">Warning (#f0ad4e)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--info" type="button"><span class="sample-button__text">Info (#5bc0de)</span></button>
+  </div>
+</div>
+<!--===== / Example Preview =====-->
+</div>
+<textarea class="uinote-code__text">
+<!--===== code =====-->
+<a class="sample-button--{modifier}" role="button" href="#undefined"><span class="sample-button__text"> … </span></a>
+<!-- OR -->
+<button class="sample-button--{modifier}" type="button"><span class="sample-button__text"> … </span></button>
+<!--===== /code =====-->
+</textarea>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-button-disabled">
+<h2 class="uinote-module__name">Disabled Button</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample disabled button sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>anchor(&lt;a&gt;)</dt>
+    <dd>aria-disabled="true"</dd>
+    <dt>button(&lt;button&gt;)</dt>
+    <dd>disabled</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Commentary text Commentary text Commentary text</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="false">
+<!--===== Example Preview =====-->
+<div class="uinote-grid uinote-grid--col2 uinote-grid--mbnone">
+  <div class="uinote-grid__col">
+    <button class="sample-button" type="button" disabled><span class="sample-button__text">Default (#fff)</span></button>
+  </div>
+</div>
+<div class="uinote-grid uinote-grid--col2 uinote-grid--mbnone">
+  <div class="uinote-grid__col">
+    <button class="sample-button--primary" type="button" disabled><span class="sample-button__text">Primary (#0275d8)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--secondary" type="button" disabled><span class="sample-button__text">Secondary (#999)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--success" type="button" disabled><span class="sample-button__text">Success (#5cb85c)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--danger" type="button" disabled><span class="sample-button__text">Danger (#d9534f)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--warning" type="button" disabled><span class="sample-button__text">Warning (#f0ad4e)</span></button>
+  </div>
+  <div class="uinote-grid__col">
+    <button class="sample-button--info" type="button" disabled><span class="sample-button__text">Info (#5bc0de)</span></button>
+  </div>
+</div>
+<!--===== / Example Preview =====-->
+</div>
+<textarea class="uinote-code__text">
+<!--===== code =====-->
+<a class="sample-button--{modifier}" role="button" href="#undefined" aria-disabled="true"><span class="sample-button__text"> … </span></a>
+<!-- OR -->
+<button class="sample-button--{modifier}" type="button" disabled><span class="sample-button__text"> … </span></button>
+<!--===== /code =====-->
+</textarea>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-button-inline">
+<h2 class="uinote-module__name">Inline Button</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample inline button sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>MultiClass Inline Style</dt>
+    <dd>.sample-button--inline</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Commentary text Commentary text Commentary text</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="true">
+<!--===== Example Preview =====-->
+<button class="sample-button sample-button--inline" type="button"><span class="sample-button__text">Default (#fff)</span></button>
+<button class="sample-button--primary sample-button--inline" type="button"><span class="sample-button__text">Primary (#0275d8)</span></button>
+<button class="sample-button--secondary sample-button--inline" type="button"><span class="sample-button__text">Secondary (#999)</span></button>
+<button class="sample-button--success sample-button--inline" type="button"><span class="sample-button__text">Success (#5cb85c)</span></button>
+<button class="sample-button--danger sample-button--inline" type="button"><span class="sample-button__text">Danger (#d9534f)</span></button>
+<button class="sample-button--warning sample-button--inline" type="button"><span class="sample-button__text">Warning (#f0ad4e)</span></button>
+<button class="sample-button--info sample-button--inline" type="button"><span class="sample-button__text">Info (#5bc0de)</span></button>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-button-sizeing">
+<h2 class="uinote-module__name">Button Sizeing</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample button sizeing style</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>MultiClass LargeSize</dt>
+    <dd>.sample-button--large</dd>
+    <dt>MultiClass SmallSize</dt>
+    <dd>.sample-button--small</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Commentary text Commentary text Commentary text</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview" data-code-display="true">
+<!--===== Example Preview =====-->
+<!-- LargeSize -->
+<button class="sample-button--primary sample-button--large sample-button--inline" type="button"><span class="sample-button__text">Large Size</span></button>
+<!-- Default -->
+<button class="sample-button--primary sample-button--inline" type="button"><span class="sample-button__text">Default Size</span></button>
+<!-- SmallSize -->
+<button class="sample-button--primary sample-button--small sample-button--inline" type="button"><span class="sample-button__text">Small Size</span></button>
+<!-- TinySize -->
+<button class="sample-button--primary sample-button--tiny sample-button--inline" type="button"><span class="sample-button__text">Tyny Size</span></button>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+  <!-- .uinote-container --></div>
+
+<!-- .uinote-main --></main>
+
+<!--#include virtual="/assets/include/footer.html" -->
+
+<!--#include virtual="/assets/include/scripts.html" -->
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+// ------------------------------------------------
+// Project text
+// ------------------------------------------------
+
+#{$prefix}{
+
+  &-text{
+    $self: &;
+    &--left{
+      text-align: left;
+    }
+    &--center{
+      text-align: center;
+    }
+    &--right{
+      text-align: right;
+    }
+    @include mq(sd){
+      &--sd-left{
+        text-align: left;
+      }
+      &--sd-center{
+        text-align: center;
+      }
+      &--sd-right{
+        text-align: right;
+      }
+    }
+    @include mq(md){
+      &--md-left{
+        text-align: left;
+      }
+      &--md-center{
+        text-align: center;
+      }
+      &--md-right{
+        text-align: right;
+      }
+    }
+    @include mq(ld){
+      &--ld-left{
+        text-align: left;
+      }
+      &--ld-center{
+        text-align: center;
+      }
+      &--ld-right{
+        text-align: right;
+      }
+    }
+  }
+
+}

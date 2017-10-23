@@ -1,0 +1,121 @@
+// ------------------------------------------------
+// Project Grid
+// ------------------------------------------------
+
+// Grid Mixin
+// -----------------------------------------------
+@mixin grid($gutter:0) {
+  $self: &;
+  display: flex;
+  flex-wrap: wrap;
+  // Gutter
+  &:not([data-gutter="none"]){
+    margin-left: -#{$gutter}px;
+    #{$self}__item {
+      margin-left: #{$gutter}px;
+      width: 100%;
+    }
+    @for $i from 1 through 12 {
+      &[data-col="#{$i}"]{
+        #{$self}__item {
+          width: calc(#{100% / $i} - #{$gutter}px);
+        }
+      }
+    }
+    @for $i from 3 through 11 {
+      &[data-col="#{$i}"]{
+        #{$self}__item{
+          @if ($i == $i) {
+            @for $num from 2 through ($i - 1) {
+              &[data-connect="#{$num}"]{
+                width: calc(#{(100% / $i)*$num} - #{$gutter}px);
+              }
+            }
+          }
+        }
+      }
+    }
+    @include mq(md){
+      @for $i from 1 through 12 {
+        &[data-col-md="#{$i}"]{
+          #{$self}__item {
+            width: calc(#{100% / $i} - #{$gutter}px);
+          }
+        }
+      }
+      @for $i from 3 through 11 {
+        &[data-col-md="#{$i}"]{
+          #{$self}__item{
+            @if ($i == $i) {
+              @for $num from 2 through ($i - 1) {
+                &[data-connect="#{$num}"]{
+                  width: calc(#{(100% / $i)*$num} - #{$gutter}px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @include mq(ld){
+      @for $i from 1 through 12 {
+        &[data-col-ld="#{$i}"]{
+          #{$self}__item {
+            width: calc(#{100% / $i} - #{$gutter}px);
+          }
+        }
+      }
+      @for $i from 3 through 11 {
+        &[data-col-ld="#{$i}"]{
+          #{$self}__item{
+            @if ($i == $i) {
+              @for $num from 2 through ($i - 1) {
+                &[data-connect="#{$num}"]{
+                  width: calc(#{(100% / $i)*$num} - #{$gutter}px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // None Gutter
+  &[data-gutter="none"]{
+      @for $i from 1 through 12 {
+      &[data-col="#{$i}"]{
+        #{$self}__item {
+          width: #{100% / $i};
+        }
+      }
+    }
+    @for $i from 3 through 11 {
+      &[data-col="#{$i}"]{
+        #{$self}__item{
+          @if ($i == $i) {
+            @for $num from 2 through ($i - 1) {
+              &[data-connect="#{$num}"]{
+                width: calc(#{(100% / $i)*$num});
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Grid Layout
+// -----------------------------------------------
+#{$prefix}{
+  &-grid{
+    $self: &;
+    @include grid(20);
+    // Equal option
+    &[data-grid-option="equal"]{
+      #{$self}__item{
+        display: flex;
+      }
+    }
+  }
+}

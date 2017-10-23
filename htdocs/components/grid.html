@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>GridSystem | UINOTE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!--#include virtual="/assets/include/styles.html" -->
+</head>
+
+<body class="uinote">
+
+<!--#include virtual="/assets/include/header.html" -->
+
+<!--#include virtual="/assets/include/glovalnav.html" -->
+
+<main class="uinote-main">
+
+  <div class="uinote-container">
+
+    <div class="uinote-page-header">
+      <h1 class="uinote-page-heading">GridSystem</h1>
+      <small>Grid Layout Data Input Example</small>
+    </div>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-grid">
+<h2 class="uinote-module__name">GridLayout</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample grid sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>ClassName</dt>
+    <dd>.sample-grid</dd>
+    <dt>Data attribute</dt>
+    <dd>data-col="{1-12}" (Number of columns)</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Enter the number of columns in the data attribute</li>
+    <li>Up to 12 columns can be set</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview uinote-module__preview--grid" data-code-display="true">
+<!--===== Example Preview =====-->
+<!-- 1column([data-col="1"])) -->
+<div class="sample-grid" data-col="1">
+  <div class="sample-grid__item">1</div>
+</div>
+<!-- 2column([data-col="2"])) -->
+<div class="sample-grid" data-col="2">
+  <div class="sample-grid__item">2</div>
+  <div class="sample-grid__item">2</div>
+</div>
+<!-- 3column([data-col="3"])) -->
+<div class="sample-grid" data-col="3">
+  <div class="sample-grid__item">3</div>
+  <div class="sample-grid__item">3</div>
+  <div class="sample-grid__item">3</div>
+</div>
+<!-- 4column([data-col="4"])) -->
+<div class="sample-grid" data-col="4">
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+</div>
+<!-- 5column([data-col="5"])) -->
+<div class="sample-grid" data-col="5">
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+</div>
+<!-- 6column([data-col="6"])) -->
+<div class="sample-grid" data-col="6">
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+</div>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-column-connect">
+<h2 class="uinote-module__name">ColumnConnect</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample grid column connect sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>ClassName</dt>
+    <dd>.sample-grid</dd>
+    <dt>Data attribute</dt>
+    <dd>data-col="{1-12}" (Number of columns)</dd>
+    <dt>Data attribute</dt>
+    <dd>data-connect="{n}" (Number of columns to be concatenated)</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Set [data-connect="{n}"] to [.sample-grid__item]"]</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview uinote-module__preview--grid" data-code-display="true">
+<!--===== Example Preview =====-->
+<!-- Connect 2columns of 3columns -->
+<div class="sample-grid" data-col="3">
+  <div class="sample-grid__item">3</div>
+  <div class="sample-grid__item" data-connect="2">3 * 2</div>
+</div>
+<!-- Connect 3columns of 4columns -->
+<div class="sample-grid" data-col="4">
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item" data-connect="3">4 * 3</div>
+</div>
+<!-- Connect 2columns of 4columns -->
+<div class="sample-grid" data-col="4">
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item" data-connect="2">4 * 2</div>
+</div>
+<!-- Connect 4columns of 5columns -->
+<div class="sample-grid" data-col="5">
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item" data-connect="4">5 * 4</div>
+</div>
+<!-- 3Connect 2columns of 5columns -->
+<div class="sample-grid" data-col="5">
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item" data-connect="3">5 * 3</div>
+</div>
+<!-- Connect 2columns of 5columns -->
+<div class="sample-grid" data-col="5">
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item" data-connect="2">5 * 2</div>
+</div>
+<!-- Connect 5columns of 6columns -->
+<div class="sample-grid" data-col="6">
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item" data-connect="5">6 * 5</div>
+</div>
+<!-- Connect 4columns of 6columns -->
+<div class="sample-grid" data-col="6">
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item" data-connect="4">6 * 4</div>
+</div>
+<!-- Connect 3columns of 6columns -->
+<div class="sample-grid" data-col="6">
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item" data-connect="3">6 * 3</div>
+</div>
+<!-- Connect 2columns of 6columns -->
+<div class="sample-grid" data-col="6">
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item" data-connect="2">6 * 2</div>
+</div>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-none-gutter">
+<h2 class="uinote-module__name">NoneGutter</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample none gutter sytle</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>Data attribute</dt>
+    <dd>data-gutter="none"</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Set [data-gutter="none"] to [.sample-grid]</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview uinote-module__preview--grid" data-code-display="true">
+<!--===== Example Preview =====-->
+<!-- 1column([data-col="1"])) -->
+<div class="sample-grid" data-gutter="none" data-col="1">
+  <div class="sample-grid__item">1</div>
+</div>
+<!-- 2column([data-col="2"])) -->
+<div class="sample-grid" data-gutter="none" data-col="2">
+  <div class="sample-grid__item">2</div>
+  <div class="sample-grid__item">2</div>
+</div>
+<!-- 3column([data-col="3"])) -->
+<div class="sample-grid" data-gutter="none" data-col="3">
+  <div class="sample-grid__item">3</div>
+  <div class="sample-grid__item">3</div>
+  <div class="sample-grid__item">3</div>
+</div>
+<!-- 4column([data-col="4"])) -->
+<div class="sample-grid" data-gutter="none" data-col="4">
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+  <div class="sample-grid__item">4</div>
+</div>
+<!-- 5column([data-col="5"])) -->
+<div class="sample-grid" data-gutter="none" data-col="5">
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+  <div class="sample-grid__item">5</div>
+</div>
+<!-- 6column([data-col="6"])) -->
+<div class="sample-grid" data-gutter="none" data-col="6">
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+  <div class="sample-grid__item">6</div>
+</div>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+<section class="uinote-section">
+<div class="uinote-module" id="sample-responsive-adjust">
+<h2 class="uinote-module__name">ResponsiveAdjustments</h2>
+<div class="uinote-module__doc">
+<!--===== Module Docs =====-->
+<p>sample responsivea adjustments style</p>
+<!--===== / Module Docs =====-->
+</div>
+<!--===== Module Data =====-->
+<!-- Module Data Usage -->
+<div class="uinote-module__data" data-format="usage">
+  <dl>
+    <dt>Data attribute</dt>
+    <dd>data-col="{n}" (Initial setting)</dd>
+    <dt>Data attribute</dt>
+    <dd>data-col-md="{n}" (min-width: 641px)</dd>
+    <dt>Data attribute</dt>
+    <dd>data-col-ld="{n}" (min-width: 1024px)</dd>
+  </dl>
+</div>
+<!-- Module Data Notes -->
+<div class="uinote-module__data" data-format="notes">
+  <ul>
+    <li>Set for each device width</li>
+  </ul>
+</div>
+<!--===== / Module Data =====-->
+<div class="uinote-module__preview uinote-module__preview--grid" data-code-display="true">
+<!--===== Example Preview =====-->
+<!-- 1column - 2column -->
+<div class="sample-grid" data-col="1" data-col-md="2">
+  <div class="sample-grid__item">1-2</div>
+  <div class="sample-grid__item">1-2</div>
+</div>
+<!-- 1column - 2column - 4column -->
+<div class="sample-grid" data-col="1" data-col-md="2" data-col-ld="4">
+  <div class="sample-grid__item">1-2-4</div>
+  <div class="sample-grid__item">1-2-4</div>
+  <div class="sample-grid__item">1-2-4</div>
+  <div class="sample-grid__item">1-2-4</div>
+</div>
+<!-- 1column - 3column - 6column -->
+<div class="sample-grid" data-col="1" data-col-md="3" data-col-ld="6">
+  <div class="sample-grid__item">1-3-6</div>
+  <div class="sample-grid__item">1-3-6</div>
+  <div class="sample-grid__item">1-3-6</div>
+  <div class="sample-grid__item">1-3-6</div>
+  <div class="sample-grid__item">1-3-6</div>
+  <div class="sample-grid__item">1-3-6</div>
+</div>
+<!-- 2column - 4column -->
+<div class="sample-grid" data-col="2" data-col-md="4">
+  <div class="sample-grid__item">2-4</div>
+  <div class="sample-grid__item">2-4</div>
+  <div class="sample-grid__item">2-4</div>
+  <div class="sample-grid__item">2-4</div>
+</div>
+<!--===== / Example Preview =====-->
+</div>
+</div>
+</section>
+
+
+  <!-- .uinote-container --></div>
+
+<!-- .uinote-main --></main>
+
+<!--#include virtual="/assets/include/footer.html" -->
+
+<!--#include virtual="/assets/include/scripts.html" -->
+
+</body>
+</html>

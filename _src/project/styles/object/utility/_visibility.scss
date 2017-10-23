@@ -1,0 +1,27 @@
+// ------------------------------------------------
+// Project Visibility
+// ------------------------------------------------
+
+#{$prefix}{
+
+  &-hidden{
+    $self: &;
+    display: none;
+    &--sd{
+      @include mq(sd){
+        display: none;
+      }
+    }
+    &--md{
+      @include mq(md){
+        display: none;
+      }
+    }
+    &--ld{
+      @include mq(ld){
+        display: none;
+      }
+    }
+  }
+
+}

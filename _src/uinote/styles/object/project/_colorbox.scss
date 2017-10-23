@@ -1,0 +1,36 @@
+// ------------------------------------------------
+// UINOTE ColorBox Style
+// ------------------------------------------------
+
+#{$prefix}{
+
+  &-colorbox{
+    background-color: #000;
+    border-radius: .25em;
+    line-height: 1.5;
+    padding: .75em;
+    &[data-tone="dark"]{
+      color: #fff;
+    }
+    &[data-tone="light"]{
+      color: #999;
+    }
+  	&__name{
+      font-size: $txt-s;
+      font-weight: normal;
+      margin: 0 0 .2em 0;
+  	}
+    &__data{
+      font-size: $txt-s;
+      list-style: none;
+      margin: 0;
+      &-hex{
+        opacity: .8;
+      }
+      &-rgb{
+        opacity: .8;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,45 @@
+// ------------------------------------------------
+// UINOTE variable
+// ------------------------------------------------
+
+// Breakpoints
+// ------------------------------------------------
+// - smallDevice:   40em(640px)
+// - mediumlDevice: 40.063em(641px)
+// - mediumLarge:   40.063em(641px) - 64em(1024px)
+// - largeDevice:   64.063em(1025px)
+// - extraLarge:    90.063em(1441px)
+$breakpoints: (
+  'sd': '(max-width: 40em)',
+  'md': '(min-width: 40.063em)',
+  'ml': '(min-width: 40.063em) and (max-width: 64em)',
+  'ld': '(min-width: 64.063em)',
+  'xl': '(min-width: 90.063em)'
+) !default;
+
+// Color Variable
+// ------------------------------------------------
+$color-default:   #333;
+$color-gray:      #aaa;
+$color-lightgray: #ddd;
+$color-white:     #fff;
+$color-link:      #1111cc;
+$color-disabled:  #eee;
+
+// TextSize Variable
+// ------------------------------------------------
+$txt-xs:  1.0rem;
+$txt-s:   1.2rem;
+$txt-sm:  1.4rem;
+$txt-m:   1.6rem;
+$txt-ml:  1.8rem;
+$txt-l:   2.4rem;
+$txt-xl:  3.6rem;
+$txt-xxl: 4.8rem;
+
+// Margin Bottom
+$mb-s:   5px;
+$mb-m:   10px;
+$mb-l:   20px;
+$mb-xl:  30px;
+$mb-xxl: 40px;

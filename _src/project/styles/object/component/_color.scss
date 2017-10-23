@@ -1,0 +1,24 @@
+// ------------------------------------------------
+// Project Color
+// ------------------------------------------------
+
+#{$prefix}{
+
+  // Text Color
+  $txt_colors:(
+    text--default:  $color-default,
+    text--muted:    $color-muted,
+    text--primary:  $color-primary,
+    text--success:  $color-success,
+    text--info:     $color-info,
+    text--warning:  $color-warning,
+    text--danger:   $color-danger,
+    text--gray:     $color-gray,
+    text--white:    $color-white
+  );
+  @each $txt_class, $txt_color in $txt_colors {
+    &-#{$txt_class} {
+       color: $txt_color;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// ------------------------------------------------
+// UINOTE Global Seting
+// ------------------------------------------------
+
+//OpenSuns
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+$pointFont:"Open Sans", sans-serif;
+
+// CodeFont
+@import url(//fonts.googleapis.com/css?family=Source+Code+Pro);
+$codeFont: 'Source Code Pro', monospace;
+
+// Global
+html{
+  font-size: 62.5%; //(10px)
+}
+
+body{
+  color: $color-default;
+  font-size: 1.6em; //(16px)
+  line-height: 1.5625;
+}
+
+[class*="uinote"],
+[class*="uinote"] *,
+[class*="uinote"]::after,
+[class*="uinote"]::before {
+  box-sizing: border-box;
+}
+[class*="uinote"]{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: underline;
+  color: $color-link;
+  -webkit-tap-highlight-color: rgba($color-link, .1);
+  text-decoration-color: lighten($color-gray, 5%);
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-link;
+  }
+}
