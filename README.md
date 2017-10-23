@@ -141,7 +141,7 @@ npm install
 │           ├── uinote_scripts.html
 │           └── uinote_styles.html
 ├── gulpfile.js
-├── htdocs
+├── docs
 │   ├── assets
 │   │   ├── include
 │   │   │   ├── footer.html

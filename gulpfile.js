@@ -37,7 +37,7 @@ const dateFormat = timestamp('YYYYMMDDHHmmss');
 // FilePaths
 //------------------------------------------------------
 const src   = '_src';
-const dst   = 'htdocs';
+const dst   = 'docs';
 const paths = {
   // uinote
     src_uinote_styles   : src + '/uinote/styles/**/*.scss',
@@ -59,7 +59,7 @@ const paths = {
 //------------------------------------------------------
 // LocalServer
 //------------------------------------------------------
-var baseDir = __dirname + '/htdocs';
+var baseDir = __dirname + '/' + dst;
 gulp.task('server', function() {
   browserSync.init({
     notify: false,
