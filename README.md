@@ -47,7 +47,7 @@ npm install
 ファイル監視の実行は以下のコマンドを実行します。
 
 ```bash
-	npx gulp
+npx gulp
 ```
 
 以下のタスクを実行します。
@@ -59,8 +59,8 @@ npm install
 * イメージファイルの最適化(単独タスク)
 
 ```bash
-	npx gulp project_images //プロジェクト用
-	npx gulp uinote_images //UINOTE用
+npx gulp project_images //プロジェクト用
+npx gulp uinote_images //UINOTE用
 ```
 
 ## File
