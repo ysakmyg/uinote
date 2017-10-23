@@ -4,14 +4,59 @@
   <meta charset="utf-8">
   <title>Typography | UINOTE</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--#include virtual="/assets/include/styles.html" -->
+<!-- start _uinote_styles.html-->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/vs.min.css">
+<link rel="stylesheet" href="/assets/uinote/css/uinote.min.css?rev=e5656fdbddb8cf97f35883e73f54229c">
+
+<!-- end _uinote_styles.html-->
+<!-- start _project_styles.html-->
+<link rel="stylesheet" href="/assets/sample/css/sample.app.min.css?rev=261e9a965d1e30fec0273e4078bfec55">
+
+<!-- end _project_styles.html-->
 </head>
 
 <body class="uinote">
 
-<!--#include virtual="/assets/include/header.html" -->
+<!-- start _header.html-->
+  <header class="uinote-header">
+    <div class="uinote-header__container">
+      <p class="uinote-siteid"><a href="/"><img src="/assets/uinote/images/uinote_logo.svg" alt="UINOTE" width="150"></a></p>
+      <button class="uinote-menu-btn" type="button" aria-expanded="false" aria-controls="uinote-global-nav" aria-label="Close">
+        <span class="uinote-icon uinote-icon--menu" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48"><path d="M4 5h40v6H4V5zm0 16h40v6H4v-6zm0 16h40v6H4v-6z" /></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+<!-- end _header.html-->
 
-<!--#include virtual="/assets/include/glovalnav.html" -->
+<!-- start _glovalnav.html-->
+  <nav class="uinote-global-nav" id="uinote-global-nav">
+    <button class="uinote-global-nav__close" aria-label="Close">
+      <span class="uinote-icon uinote-icon--close" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 48 48"><path d="M23.947 20.076L7.87 4 4 7.87l16.076 16.077L4 40.023l3.87 3.87L23.948 27.82l16.076 16.076 3.87-3.87-16.074-16.08L43.894 7.87 40.024 4 23.946 20.076z" /></svg>
+      </span>
+    </button>
+    <ul class="uinote-global-nav__list" role="tree">
+      <li><a role="treeitem" href="/">Overview</a></li>
+      <li><span role="treeitem" data-toggle="collapse" aria-expanded="false" aria-controls="basic">Basic</span>
+        <ul id="basic" role="group" aria-hidden="true">
+          <li><a role="treeitem" href="/basic/example.html">Example</a></li>
+          <li><a role="treeitem" href="/basic/colors.html">Colors</a></li>
+          <li><a role="treeitem" href="/basic/typography.html">Typography</a></li>
+        </ul>
+      </li>
+      <li><span role="treeitem" data-toggle="collapse" aria-expanded="false" aria-controls="components">Components</span>
+        <ul id="components" role="group" aria-hidden="true">
+          <li><a role="treeitem" href="/components/button.html">Button</a></li>
+          <li><a role="treeitem" href="/components/forms.html">Forms</a></li>
+          <li><a role="treeitem" href="/components/grid.html">GridSystem</a></li>
+        </ul>
+      </li>
+      <li><a role="treeitem" href="/utilities/">Utilities</a></li>
+    </ul>
+  </nav>
+<!-- end _glovalnav.html-->
 
 <main class="uinote-main">
 
@@ -111,13 +156,34 @@
 </section>
 
 
-  <!-- .uinote-container --></div>
+  <!-- /.uinote-container --></div>
 
-<!-- .uinote-main --></main>
+<!-- /.uinote-main --></main>
 
-<!--#include virtual="/assets/include/footer.html" -->
+<!-- start _footer.html-->
+	<footer class="uinote-footer">
+		<small>Copyright &copy; UINOTE All Rights Reserved.</small>
+		<p class="uinote-version">Ver.1.0.0</p>
+	</footer>
 
-<!--#include virtual="/assets/include/scripts.html" -->
+	<span class="uinote__pagetop" aria-label="Pagetop">
+		<a href="#top">
+			<span class="uinote-icon uinote-icon--arrow-top" aria-hidden="true">
+				<svg width="48" height="48" viewBox="0 0 48 48"><path d="M19.638 16.6L4 32.235l4.304 4.304L23.942 20.9 39.58 36.54l4.304-4.304L28.246 16.6l.07-.072-4.303-4.304-.07.07-.072-.07-4.3 4.304.07.07z" /></svg>
+			</span>
+		</a>
+	</span>
+<!-- end _footer.html-->
 
+<!-- start _uinote_scripts.html-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="/assets/uinote/js/uinote.min.js?rev=84b49cce9af5a56639ac630a81de58d7"></script>
+
+<!-- end _uinote_scripts.html-->
+<!-- start _project_scripts.html-->
+<script src="/assets/sample/js/sample.app.min.js?rev=72825e22cca7fc552c40eb1bcbdf4df7"></script>
+
+<!-- end _project_scripts.html-->
 </body>
 </html>

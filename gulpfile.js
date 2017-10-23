@@ -17,6 +17,7 @@ const connectSSI   = require('connect-ssi');
 const timestamp    = require('time-stamp');
 const revts        = require('gulp-rev-timestamp');
 const template     = require('gulp-template');
+const extender     = require('gulp-html-extend');
 
 //------------------------------------------------------
 // DevelopMode(css expanded or compressed)
@@ -43,6 +44,7 @@ const paths = {
     src_uinote_styles   : src + '/uinote/styles/**/*.scss',
     src_uinote_scripts  : src + '/uinote/scripts/**/*.js',
     src_uinote_template : src + '/uinote/template',
+    src_uinote_extend   : src + '/uinote/extend',
     dst_uinote_styles   : dst + '/assets/uinote/css',
     dst_uinote_scripts  : dst + '/assets/uinote/js',
     dst_uinote_template : dst + '/assets/include/timestamp',
@@ -103,9 +105,9 @@ gulp.task('uinote_styles', function () {
     }))
     .pipe(gulp.dest(paths.dst_uinote_styles))
     .on("end",function(){
-      return gulp.src(paths.src_uinote_template + '/uinote_styles.html')
+      return gulp.src(paths.src_uinote_template + '/_uinote_styles.html')
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.dst_uinote_template))
+        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
     })
 });
 // Scripts (_src/uinote/scripts/**/*.js)
@@ -122,11 +124,20 @@ gulp.task('uinote_scripts', function() {
     }))
     .pipe(gulp.dest(paths.dst_uinote_scripts))
     .on("end",function(){
-      return gulp.src(paths.src_uinote_template + '/uinote_scripts.html')
+      return gulp.src(paths.src_uinote_template + '/_uinote_scripts.html')
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.dst_uinote_template))
+        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
     })
 });
+// HTML (_src/extend/)
+//------------------------------------------------------
+gulp.task('extend', function () {
+    return gulp.src([paths.src_uinote_extend + '/**/*.html' , '!' + paths.src_uinote_extend + '/**/_*.html'])
+        .pipe(extender({annotations:true,verbose:false}))
+        .pipe(gulp.dest(paths.dst_uinote_html))
+
+})
+
 
 //------------------------------------------------------
 // ProjectTask
@@ -144,10 +155,10 @@ gulp.task('project_styles', function () {
     }))
     .pipe(gulp.dest(paths.dst_project_styles))
     .on("end",function(){
-      return gulp.src(paths.src_uinote_template + '/project_styles.html')
+      return gulp.src(paths.src_uinote_template + '/_project_styles.html')
         .pipe(template({projectName: prjName}))
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.dst_uinote_template))
+        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
     })
 });
 // Scripts (_src/project/scripts/**/*.js)
@@ -164,10 +175,10 @@ gulp.task('project_scripts', function() {
     }))
     .pipe(gulp.dest(paths.dst_project_scripts))
     .on("end",function(){
-      return gulp.src(paths.src_uinote_template + '/project_scripts.html')
+      return gulp.src(paths.src_uinote_template + '/_project_scripts.html')
         .pipe(template({projectName: prjName}))
         .pipe(revts({strict: false, mode: 'timestamp'}))
-        .pipe(gulp.dest(paths.dst_uinote_template))
+        .pipe(gulp.dest(paths.src_uinote_extend + '/include/timestamp/'))
     })
 });
 // Image Min
@@ -189,6 +200,7 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function() {
   gulp.watch([paths.src_uinote_styles],['uinote_styles','reload'])
   gulp.watch([paths.src_uinote_scripts],['uinote_scripts','reload'])
+  gulp.watch([paths.src_uinote_extend + '/**/*.html'],['extend','reload'])
   gulp.watch([paths.src_project_styles],['project_styles','reload'])
   gulp.watch([paths.src_project_scripts],['project_scripts','reload'])
 });
