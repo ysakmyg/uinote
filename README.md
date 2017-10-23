@@ -56,126 +56,136 @@ npm install
 * イメージファイルの最適化(単独タスク)
 
 ```bash
-	npx gulp imagemin
+	npx gulp project_images //プロジェクト用
+	npx gulp uinote_images //UINOTE用
 ```
 
 ## File
 
 ```text
 一部抜粋
-├── _src
-│   ├── project //プロジェクトファイル（※）
-│   │   ├── images //プロジェクト画像ファイル（※）
+
+├── _src　＃開発用フォルダー
+│   ├── project　＃プロジェクト用フォルダー
+│   │   └── assets
+│   │       ├── images　＃プロジェクト用画像ファイル（※）
+│   │       │   ├── jpg
+│   │       │   │   └── danbo.jpg
+│   │       │   └── png
+│   │       │       └── logo.png
+│   │       ├── scripts　＃プロジェクトJS用ファイル（※）
+│   │       │   ├── _partial01.js
+│   │       │   ├── _partial02.js
+│   │       │   └── _partial03.js
+│   │       └── styles　＃プロジェクト用スタイルファイル Sass(SCSS)（※）
+│   │           ├── foundation
+│   │           │   ├── _config.scss
+│   │           │   ├── _global.scss
+│   │           │   ├── _mixin.scss
+│   │           │   ├── _reset.scss
+│   │           │   └── _variable.scss
+│   │           ├── object
+│   │           │   ├── component
+│   │           │   │   ├── _button.scss
+│   │           │   │   ├── _color.scss
+│   │           │   │   ├── _forms.scss
+│   │           │   │   ├── _grid.scss
+│   │           │   │   ├── _table.scss
+│   │           │   │   └── _typography.scss
+│   │           │   ├── project
+│   │           │   └── utility
+│   │           │       ├── _fixedwidth.scss
+│   │           │       ├── _margin.scss
+│   │           │       ├── _print.scss
+│   │           │       ├── _text.scss
+│   │           │       ├── _vertical.scss
+│   │           │       ├── _visibility.scss
+│   │           │       ├── _whitespace.scss
+│   │           │       └── _width.scss
+│   │           ├── project-app.scss
+│   │           └── structure
+│   │               ├── _footer.scss
+│   │               ├── _globalnav.scss
+│   │               └── _header.scss
+│   └── uinote　UINOTE構成ファイル
+│       ├── assets
+│       │   ├── images
+│       │   │   └── uinote_logo.svg
+│       │   ├── include　＃インクルードファイル・SSI（.htaccess）
+│       │   │   ├── footer.html
+│       │   │   ├── glovalnav.html
+│       │   │   ├── header.html
+│       │   │   └── timestamp
+│       │   │       ├── _project_scripts.html
+│       │   │       ├── _project_styles.html
+│       │   │       ├── _uinote_scripts.html
+│       │   │       └── _uinote_styles.html
+│       │   ├── scripts
+│       │   │   ├── _anchorLink.js
+│       │   │   ├── _backtoTop.js
+│       │   │   ├── _globalMenu.js　＃メニュー用HTMLページ追加時に追記（※）
+│       │   │   ├── _moduleDisplay.js
+│       │   │   └── _nullLink.js
+│       │   └── styles
+│       │       ├── foundation
+│       │       │   ├── _config.scss
+│       │       │   ├── _global.scss
+│       │       │   ├── _mixin.scss
+│       │       │   └── _variable.scss
+│       │       ├── object
+│       │       │   ├── component
+│       │       │   │   ├── _anchor.scss
+│       │       │   │   ├── _code.scss
+│       │       │   │   ├── _grid.scss
+│       │       │   │   ├── _icons.scss
+│       │       │   │   ├── _module.scss
+│       │       │   │   ├── _pageheader.scss
+│       │       │   │   └── _pagetop.scss
+│       │       │   ├── project
+│       │       │   │   ├── _colorbox.scss
+│       │       │   │   └── _intro.scss
+│       │       │   └── utilitie
+│       │       ├── structure
+│       │       │   ├── _footer.scss
+│       │       │   ├── _globalnav.scss
+│       │       │   ├── _header.scss
+│       │       │   └── _layout.scss
+│       │       └── uinote.scss
+│       └── html　＃コンポーネント記載用HTML（※）
+│           ├── basic
+│           │   ├── colors.html
+│           │   ├── example.html　＃記載例テンプレート（※）
+│           │   └── typography.html
+│           ├── components
+│           │   ├── button.html
+│           │   ├── forms.html
+│           │   └── grid.html
+│           ├── index.html
+│           └── utilities
+│               └── index.html
+├── htdocs　＃出力用フォルダー（編集不可）
+│   ├── assets
+│   │   ├── css
+│   │   │   ├── sample.app.min.css
+│   │   │   └── uinote.min.css
+│   │   ├── images
 │   │   │   ├── jpg
 │   │   │   │   └── danbo.jpg
-│   │   │   └── png
-│   │   │       └── logo.png
-│   │   ├── scripts　//プロジェクトJSファイル（※）
-│   │   │   ├── _partial01.js
-│   │   │   ├── _partial02.js
-│   │   │   └── _partial03.js
-│   │   └── styles　//プロジェクトSass(SCSS)ファイル（※）
-│   │       ├── foundation
-│   │       │   ├── _config.scss
-│   │       │   ├── _global.scss
-│   │       │   ├── _mixin.scss
-│   │       │   ├── _reset.scss
-│   │       │   └── _variable.scss
-│   │       ├── object
-│   │       │   ├── component
-│   │       │   │   ├── _button.scss
-│   │       │   │   ├── _color.scss
-│   │       │   │   ├── _forms.scss
-│   │       │   │   ├── _grid.scss
-│   │       │   │   ├── _table.scss
-│   │       │   │   └── _typography.scss
-│   │       │   ├── project
-│   │       │   └── utility
-│   │       │       ├── _fixedwidth.scss
-│   │       │       ├── _margin.scss
-│   │       │       ├── _print.scss
-│   │       │       ├── _text.scss
-│   │       │       ├── _vertical.scss
-│   │       │       ├── _visibility.scss
-│   │       │       ├── _whitespace.scss
-│   │       │       └── _width.scss
-│   │       ├── project-app.scss
-│   │       └── structure
-│   │           ├── _footer.scss
-│   │           ├── _globalnav.scss
-│   │           └── _header.scss
-│   └── uinote //UINOTEテンプレート
-│       ├── html //コンポーネントページサンンプル（※）
-│       │   ├── basic
-│       │   │   ├── colors.html
-│       │   │   ├── example.html
-│       │   │   └── typography.html
-│       │   ├── components
-│       │   │   ├── button.html
-│       │   │   ├── forms.html
-│       │   │   └── grid.html
-│       │   ├── include
-│       │   │   ├── _footer.html
-│       │   │   ├── _glovalnav.html //ナビゲーションファイル（ページ追加時要変更）
-│       │   │   ├── _header.html
-│       │   │   └── timestamp
-│       │   │       ├── _project_scripts.html　// 共通ファイル（変更不要）
-│       │   │       ├── _project_styles.html　// 共通ファイル（変更不要）
-│       │   │       ├── _uinote_scripts.html　// 共通ファイル（変更不要）
-│       │   │       └── _uinote_styles.html　// 共通ファイル（変更不要）
-│       │   ├── index.html
-│       │   └── utilities
-│       │       └── index.html
-│       ├── scripts
-│       │   ├── _anchorLink.js
-│       │   ├── _backtoTop.js
-│       │   ├── _globalMenu.js
-│       │   ├── _moduleDisplay.js
-│       │   └── _nullLink.js
-│       ├── styles
-│       │   ├── foundation
-│       │   │   ├── _config.scss
-│       │   │   ├── _global.scss
-│       │   │   ├── _mixin.scss
-│       │   │   └── _variable.scss
-│       │   ├── object
-│       │   │   ├── component
-│       │   │   │   ├── _anchor.scss
-│       │   │   │   ├── _code.scss
-│       │   │   │   ├── _grid.scss
-│       │   │   │   ├── _icons.scss
-│       │   │   │   ├── _module.scss
-│       │   │   │   ├── _pageheader.scss
-│       │   │   │   └── _pagetop.scss
-│       │   │   ├── project
-│       │   │   │   ├── _colorbox.scss
-│       │   │   │   └── _intro.scss
-│       │   │   └── utilitie
-│       │   ├── structure
-│       │   │   ├── _footer.scss
-│       │   │   ├── _globalnav.scss
-│       │   │   ├── _header.scss
-│       │   │   └── _layout.scss
-│       │   └── uinote.scss
-│       └── template
-│           ├── _project_scripts.html
-│           ├── _project_styles.html
-│           ├── _uinote_scripts.html
-│           └── _uinote_styles.html
-├── docs // 出力先フォルダー（編集不要）
-│   ├── assets
-│   │   ├── sample
-│   │   │   ├── css
-│   │   │   │   └── sample.app.min.css
-│   │   │   └── js
-│   │   │       └── sample.app.min.js
-│   │   └── uinote
-│   │       ├── css
-│   │       │   └── uinote.min.css
-│   │       ├── images
-│   │       │   └── uinote_logo.svg
-│   │       └── js
-│   │           └── uinote.min.js
+│   │   │   ├── png
+│   │   │   │   └── logo.png
+│   │   │   └── uinote_logo.svg
+│   │   ├── include
+│   │   │   ├── footer.html
+│   │   │   ├── glovalnav.html
+│   │   │   ├── header.html
+│   │   │   └── timestamp
+│   │   │       ├── _project_scripts.html
+│   │   │       ├── _project_styles.html
+│   │   │       ├── _uinote_scripts.html
+│   │   │       └── _uinote_styles.html
+│   │   └── js
+│   │       ├── sample.app.min.js
+│   │       └── uinote.min.js
 │   ├── basic
 │   │   ├── colors.html
 │   │   ├── example.html
@@ -184,19 +194,9 @@ npm install
 │   │   ├── button.html
 │   │   ├── forms.html
 │   │   └── grid.html
-│   ├── include
-│   │   ├── _footer.html
-│   │   ├── _glovalnav.html
-│   │   ├── _header.html
-│   │   └── timestamp
-│   │       ├── _project_scripts.html
-│   │       ├── _project_styles.html
-│   │       ├── _uinote_scripts.html
-│   │       └── _uinote_styles.html
 │   ├── index.html
 │   └── utilities
 │       └── index.html
-├── gulpfile.js
 ```
 （※）＝　編集ファイル
 
