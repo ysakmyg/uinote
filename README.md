@@ -68,8 +68,8 @@ npx gulp uinote_images //UINOTE用
 ```text
 一部抜粋
 
-├── _src　＃開発用フォルダー
-│   ├── project　＃プロジェクト用フォルダー
+├── _src　＃開発用
+│   ├── project　＃プロジェクト用
 │   │   └── assets
 │   │       ├── images　＃プロジェクト用画像ファイル（※）
 │   │       │   ├── jpg
@@ -116,7 +116,7 @@ npx gulp uinote_images //UINOTE用
 │       │   │   └── uinote_logo.svg
 │       │   ├── include　＃インクルードファイル・SSI（.htaccess）
 │       │   │   ├── footer.html
-│       │   │   ├── glovalnav.html
+│       │   │   ├── glovalnav.html　＃メニュー用HTML ページ追加時に追記（※）
 │       │   │   ├── header.html
 │       │   │   └── timestamp
 │       │   │       ├── _project_scripts.html
@@ -126,7 +126,7 @@ npx gulp uinote_images //UINOTE用
 │       │   ├── scripts
 │       │   │   ├── _anchorLink.js
 │       │   │   ├── _backtoTop.js
-│       │   │   ├── _globalMenu.js　＃メニュー用HTMLページ追加時に追記（※）
+│       │   │   ├── _globalMenu.js
 │       │   │   ├── _moduleDisplay.js
 │       │   │   └── _nullLink.js
 │       │   └── styles
@@ -147,7 +147,8 @@ npx gulp uinote_images //UINOTE用
 │       │       │   ├── project
 │       │       │   │   ├── _colorbox.scss
 │       │       │   │   └── _intro.scss
-│       │       │   └── utilitie
+│       │       │   └── utility
+│       │       │       └── _print.scss
 │       │       ├── structure
 │       │       │   ├── _footer.scss
 │       │       │   ├── _globalnav.scss
@@ -163,7 +164,10 @@ npx gulp uinote_images //UINOTE用
 │           │   ├── button.html
 │           │   ├── forms.html
 │           │   └── grid.html
-│           ├── index.html
+│           ├── intro.md　＃index.html用　Markdown
+│           ├── template
+│           │   ├── _index.html
+│           │   └── _template.html
 │           └── utilities
 │               └── index.html
 ├── htdocs　＃出力用フォルダー（編集不可）
@@ -181,6 +185,7 @@ npx gulp uinote_images //UINOTE用
 │   │   │   ├── footer.html
 │   │   │   ├── glovalnav.html
 │   │   │   ├── header.html
+│   │   │   ├── intro.html
 │   │   │   └── timestamp
 │   │   │       ├── _project_scripts.html
 │   │   │       ├── _project_styles.html
