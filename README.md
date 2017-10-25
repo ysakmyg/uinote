@@ -165,7 +165,7 @@ npx gulp uinote_images //UINOTE用
 │           │   ├── forms.html
 │           │   └── grid.html
 │           ├── intro.md　＃index.html用　Markdown
-│           ├── template
+│           ├── _template
 │           │   ├── _index.html
 │           │   └── _template.html
 │           └── utilities

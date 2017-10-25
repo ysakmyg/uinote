@@ -50,11 +50,11 @@ const paths = {
     src_uinote_images    : src + '/uinote/assets/images/**/*.+(jpg|jpeg|png|gif|svg)',
     src_uinote_html      : src + '/uinote/html/**/*.html',
     src_uinote_html_x    : [src + '/uinote/html/**/*.html','!' + src + '/uinote/html/**/_*.html'],
-    src_uinote_html_t    : src + '/uinote/html/template/_template.html',
+    src_uinote_html_t    : src + '/uinote/html/_template/_template.html',
     src_uinote_include   : src + '/uinote/assets/include/**/*.html',
     src_uinote_include_x : [src + '/uinote/assets/include/**/*.html','!' + src + '/uinote/assets/include/**/_*.html'],
     src_uinote_markdown  : src + '/uinote/html/**/*.md',
-    src_uinote_markdown_t: src + '/uinote/html/template/_index.html',
+    src_uinote_markdown_t: src + '/uinote/html/_template/_index.html',
  // Project src
     src_project_styles   : src + '/project/assets/styles/**/*.scss',
     src_project_scripts  : src + '/project/assets/scripts/**/*.js',
