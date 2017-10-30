@@ -3,7 +3,7 @@
 UI Component Note Template  
 
 DEMO
-http://uinote.ysakmyg.com/
+https://uinote.ysakmyg.com/
 
 ## Description
 
