@@ -1,14 +1,13 @@
 # UINOTE
 
-Front-end component development template  
-UIコンポーネント開発環境 / コンポーネント管理用テンプレート
+UI Component Note Template  
 
-表示用サンプル
+DEMO
 http://uinote.ysakmyg.com/
 
 ## Description
 
-UIのコンポーネント化（部品化）にて、各コンポーネントを組み合わせてページを生成するために使用する「コンポーネント集」を作成する開発環境及びテンプレートです。
+This is a template for creating "component note".
 
 ## Dependence
 
@@ -19,68 +18,63 @@ UIのコンポーネント化（部品化）にて、各コンポーネントを
 
 ## EditorConfig
 
-EditorConfigを導入してチームでのエディタ設定（スペース・タブ・文字コード・改行コード）を揃えることをおすすめします。各エディタのプラグインは以下よりダウンロードします。
-
 * [EditorConfig](http://editorconfig.org/#download)
 
-## Node.jsのインストール
+## Node.js
 
 * [Node.js](https://nodejs.org/ja/)
 
-### Node.jsの複数バージョン管理を行う場合
+### Node.js version
 
 * [nodenv](https://github.com/nodenv/nodenv)
 * [nodebrew](https://github.com/hokaccha/nodebrew)
 
 ## Usage
 
-##インストール
-
-「UINOTE」のファイルを一式クローンまたはダンロードし、プロジェクトのルートディレクトリに移動したら、以下のコマンドを実行して必要なモジュールをインストールします。
-
 ```bash
-npm install
+$cd pjroot
 ```
 
-### ファイル監視の実行
-
-ファイル監視の実行は以下のコマンドを実行します。
-
 ```bash
-npx gulp
+$npm install
 ```
 
-以下のタスクを実行します。
-
-* ローカルサーバーの起動
-* Sass(SCSS)ファイル監視・結合・コンパイル・圧縮
-* javascriptファイル監視・結合・圧縮
-
-* イメージファイルの最適化(単独タスク)
+### watch
 
 ```bash
-npx gulp project_images //プロジェクト用
-npx gulp uinote_images //UINOTE用
+$npx gulp
+```
+
+Perform the following tasks.
+
+* Starting the local server
+* SSass (SCSS) file watch, combining, compiling, compression
+* Javascript file wtach, coupling, compression
+
+* Optimization of image file (independent task)
+
+```bash
+npx gulp project_images //For Project
+npx gulp uinote_images //For UINOTE
 ```
 
 ## File
 
 ```text
-一部抜粋
 
-├── _src　＃開発用
-│   ├── project　＃プロジェクト用
+├── _src　＃For Development
+│   ├── project　＃For Project
 │   │   └── assets
-│   │       ├── images　＃プロジェクト用画像ファイル（※）
+│   │       ├── images　＃Project Image(*)
 │   │       │   ├── jpg
 │   │       │   │   └── danbo.jpg
 │   │       │   └── png
 │   │       │       └── logo.png
-│   │       ├── scripts　＃プロジェクトJS用ファイル（※）
+│   │       ├── scripts　＃Project JS(*)
 │   │       │   ├── _partial01.js
 │   │       │   ├── _partial02.js
 │   │       │   └── _partial03.js
-│   │       └── styles　＃プロジェクト用スタイルファイル Sass(SCSS)（※）
+│   │       └── styles　＃Project Sass(SCSS)(※)
 │   │           ├── foundation
 │   │           │   ├── _config.scss
 │   │           │   ├── _global.scss
@@ -110,13 +104,13 @@ npx gulp uinote_images //UINOTE用
 │   │               ├── _footer.scss
 │   │               ├── _globalnav.scss
 │   │               └── _header.scss
-│   └── uinote　UINOTE構成ファイル
+│   └── uinote　#For UINOTE
 │       ├── assets
 │       │   ├── images
 │       │   │   └── uinote_logo.svg
-│       │   ├── include　＃インクルードファイル・SSI（.htaccess）
+│       │   ├── include　＃include file・SSI(.htaccess)
 │       │   │   ├── footer.html
-│       │   │   ├── glovalnav.html　＃メニュー用HTML ページ追加時に追記（※）
+│       │   │   ├── glovalnav.html　＃Menu Html(※)
 │       │   │   ├── header.html
 │       │   │   └── timestamp
 │       │   │       ├── _project_scripts.html
@@ -155,22 +149,22 @@ npx gulp uinote_images //UINOTE用
 │       │       │   ├── _header.scss
 │       │       │   └── _layout.scss
 │       │       └── uinote.scss
-│       └── html　＃コンポーネント記載用HTML（※）
+│       └── html　＃Component HTML(※)
 │           ├── basic
 │           │   ├── colors.html
-│           │   ├── example.html　＃記載例テンプレート（※）
+│           │   ├── example.html　＃ExamplePage(※)
 │           │   └── typography.html
 │           ├── components
 │           │   ├── button.html
 │           │   ├── forms.html
 │           │   └── grid.html
-│           ├── intro.md　＃index.html用　Markdown
+│           ├── intro.md　＃index.html(Markdown)
 │           ├── _template
 │           │   ├── _index.html
 │           │   └── _template.html
 │           └── utilities
 │               └── index.html
-├── htdocs　＃出力用フォルダー（編集不可）
+├── htdocs　＃Output folder (not editable)
 │   ├── assets
 │   │   ├── css
 │   │   │   ├── sample.app.min.css
@@ -206,7 +200,7 @@ npx gulp uinote_images //UINOTE用
 │   └── utilities
 │       └── index.html
 ```
-（※）＝　編集ファイル
+(*)＝　Edit file
 
 ## License
 MIT © [ysakmyg](https://github.com/ysakmyg)
